@@ -6,6 +6,8 @@ async function request() {
 	const endpoint = '/v1/completions';
 	const url = `http://127.0.0.1:5000${endpoint}`;
 
+	let prompt = '日本の首都は？';
+
 	const payload = {
 		'prompt': prompt,
 		'max_tokens': 1024,
@@ -50,7 +52,6 @@ async function request() {
 		}
 	};
 
-    let prompt = '日本の首都は？';
 
 	try {
 		const response = await axios.post(url, payload, config);
